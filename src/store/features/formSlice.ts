@@ -5,7 +5,7 @@ export interface DataFormType {
     title: string;         
     firstname: string;
     lastname: string;
-    birthday: string | null;       
+    birthday: string        
     nationality: number;    
     citizenId: string;      
     gender: number;         

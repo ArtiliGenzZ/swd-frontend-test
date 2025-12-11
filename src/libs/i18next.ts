@@ -85,7 +85,7 @@ i18next.use(initReactI18next).init({
                 "Firstname": "ชื่อจริง",
                 "Lastname": "นามสกุล",
                 "Birthday": "วันเกิด",
-                "DateHolder": "ดด/วว/ปปปป",
+                "DateHolder": "วัน/เดือน/ปี",
                 "Nationality": "สัญชาติ",
                 "ThaiNationality": "ไทย",
                 "AmericanNationality": "อเมริกัน",

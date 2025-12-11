@@ -14,7 +14,7 @@ interface FormValues {
     title: string;
     firstname: string;
     lastname: string;
-    birthday?: Dayjs;
+    birthday: Dayjs;
     nationality: number;
     citizenId: string;
     gender: number;
@@ -36,7 +36,7 @@ const Forms = () => {
             //Convert String Date -> Dayjs
             const preparedData = {
                 ...formData,
-                birthday: formData.birthday ? dayjs(formData.birthday) : null,
+                birthday: dayjs(formData.birthday),
             };
             form.setFieldsValue(preparedData);
         }
@@ -45,7 +45,7 @@ const Forms = () => {
     const onSubmit = (values: FormValues) => {
         const dataProcess = {
             ...values,
-            birthday: values.birthday ? values.birthday.toISOString() : null,
+            birthday: values.birthday.toISOString() ,
         }
         if (formData) {
             const dataOnEdit = { id: formData.id, ...dataProcess }
@@ -141,7 +141,7 @@ const Forms = () => {
                             name="birthday"
                             rules={[{ required: true, message: t("BirthdayErr") }]}
                         >
-                            <DatePicker placeholder={t("DateHolder")}/>
+                            <DatePicker placeholder={t("DateHolder")} format="DD-MM-YYYY" />
                         </Form.Item>
                     </Col>
                     {/* nationality */}
