@@ -14,7 +14,7 @@ const LayoutAndStyle = () => {
     const halfOfShapes = Math.floor(shapes.length / 2);
     const rows = [
         shapes.slice(0, halfOfShapes),          
-        shapes.slice(halfOfShapes, shapes.length) 
+        shapes.slice(halfOfShapes, shapes.length)
     ];
 
     return (
@@ -53,12 +53,11 @@ const LayoutAndStyle = () => {
             {/* Shapes Row*/}
             <Flex vertical gap={16}>
                 {rows.map((rowShapes, rowIndex) => {
-                    const isTopRow = rowIndex === 0;
-                    const isBottomRow = rowIndex === 1;
+                    const indent = rowIndex % 2 === 0 && position === "up" || rowIndex % 2 !== 0 && position === "down"
                     return (
                         <Row gutter={[16, 16]} key={rowIndex}>
                             <Col span={3}></Col>
-                            {isTopRow && position === "up" || isBottomRow && position === "down" ? <Col span={3}></Col> : null}
+                            { indent ? <Col span={3}></Col> : null}
                             {rowShapes.map((shape, i) => (
                                 <Col span={6} key={`${shape}-${i}`}>
                                     <div className={styles.normal_card} onClick={() => dispatch(shuffleShapes())}>
