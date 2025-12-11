@@ -257,7 +257,6 @@ const Forms = () => {
                     </Col>
                 </Row>
             </Form>
-            {/* <FormTable /> */}
         </div>
     )
 }

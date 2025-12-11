@@ -17,7 +17,7 @@ const CitizenIdInput: React.FC<CitizenIdInputProps> = ({ value = '', onChange })
         { start: 12, end: 13, max: 1, width: 60 },   // 5th Segment
     ];
     const triggerChange = (nextString: string) => {
-        //notifies the Parent Form (Ant Design)
+        //notifies the Parent Form (Ant Design) to send the value
         onChange?.(nextString);
     };
     const updateSegment = (newValue: string, index: number) => {
@@ -34,8 +34,7 @@ const CitizenIdInput: React.FC<CitizenIdInputProps> = ({ value = '', onChange })
         const nextString = (prefix + cleanVal + suffix).trim();
         triggerChange(nextString);
 
-        //AUTO-FOCUS NEXT LOGIC
-        //If the user filled this box (length matches max), jump to next
+        //Auto-Focus next Segment , If the user filled this box (length matches max), jump to next
         if (cleanVal.length >= max && index < 4) {
             inputRefs.current[index + 1]?.focus();
         }
@@ -46,7 +45,7 @@ const CitizenIdInput: React.FC<CitizenIdInputProps> = ({ value = '', onChange })
             const { start, end } = segmentConfig[index];
             const currentSlice = value.slice(start, end);
 
-            //check if the current inputbox is empty and not the first inputbox
+            //Check if the current inputbox is empty and not the first inputbox
             if (currentSlice.length === 0 && index > 0) {
                 e.preventDefault();
                 inputRefs.current[index - 1]?.focus({ cursor: 'end' });

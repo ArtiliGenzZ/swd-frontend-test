@@ -76,7 +76,6 @@ const FormTable = () => {
     ];
 
     // Checklist functions
-    
     const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
         setCheckedList(newSelectedRowKeys);
     };

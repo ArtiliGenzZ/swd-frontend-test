@@ -15,19 +15,14 @@ const shapeSlice = createSlice({
     },
     reducers: {
         moveShapeLeft(state) {
-            // 1. Create a copy
             const newShapes = [...state.shapes];
-            // 2. Remove the first item (.shift())
             const firstItem = newShapes.shift() as string;
-            // 3. Add it to the end (.push())
             newShapes.push(firstItem);
             state.shapes = newShapes;
         },
         moveShapeRight(state) {
             const newShapes = [...state.shapes];
-            // 2. Remove the last item (.pop())
             const lastItem = newShapes.pop() as string;
-            // 3. Add it to the front (.unshift())
             newShapes.unshift(lastItem);
             state.shapes = newShapes;
         },
