@@ -97,7 +97,8 @@ const FormTable = () => {
     const onEdit = (id: React.Key) => {
         dispatch(editData(id));
     };
-
+    
+    //Hydration issue prevention
     useEffect(() => {
         setIsMounted(true);
     }, []);
