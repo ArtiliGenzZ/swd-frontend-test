@@ -43,19 +43,19 @@ const formSlice = createSlice({
     name: 'form',
     initialState,
     reducers: {
-        addData: (state, action: PayloadAction<any>) => {
+        addData: (state, action: PayloadAction<Data>) => {
             state.storedData.push(action.payload);
-            if (typeof window !== 'undefined') { 
+            if (typeof window !== 'undefined') {
                 storeInLocalStorage(state.storedData)
             }
         },
-        deleteData: (state, action: PayloadAction<any>) => {
+        deleteData: (state, action: PayloadAction<string | string[]>) => {
             state.storedData = state.storedData.filter((item) => !action.payload.includes(item.id));
             if (typeof window !== 'undefined') { 
                 storeInLocalStorage(state.storedData)
             }
         },
-        editData: (state, action: PayloadAction<any>) => {
+        editData: (state, action: PayloadAction<string>) => {
             const foundData = state.storedData.find((item) => item.id === action.payload);
             if (foundData) {
                 state.formData = foundData;
@@ -64,7 +64,7 @@ const formSlice = createSlice({
                 alert(`Data not found`);
             }
         },
-        updateData: (state, action: PayloadAction<any>) => {
+        updateData: (state, action: PayloadAction<Data>) => {
             state.storedData = state.storedData.map((item) => item.id === action.payload.id ? action.payload : item);
             if (typeof window !== 'undefined') { 
                 storeInLocalStorage(state.storedData)

@@ -1,6 +1,5 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import styles from '@/styles/table.module.scss'
 import { Button, Checkbox, Table, Space } from 'antd'
 import { CheckboxProps, TableProps, TableColumnsType } from 'antd'
 import { Flex } from 'antd'
@@ -37,7 +36,7 @@ const FormTable = () => {
             title: t("Gender"),
             dataIndex: 'gender',
             sorter: (a, b) => a.gender - b.gender,
-            render: (text, record) => {
+            render: (text, _) => {
                 return (
                     <span>
                         {text === 1 ? t("Male") : text === 2 ? t("Female") : t("Other")}
@@ -55,7 +54,7 @@ const FormTable = () => {
             title: t("Nationality"),
             dataIndex: 'nationality',
             sorter: (a, b) => a.nationality - b.nationality,
-            render: (text, record) => {
+            render: (text, _) => {
                 return (
                     <span>
                         {text === 1 ? t("ThaiNationality") : text === 2 ? t("AmericanNationality") : text === 3 ? t("FrenchNationality") : t("OtherNationality")}
@@ -88,13 +87,12 @@ const FormTable = () => {
     };
     
     const onDelete = (ids: React.Key | React.Key[]) => {
-        const idsToDelete = Array.isArray(ids) ? ids : [ids];
-        dispatch(deleteData(idsToDelete));
+        dispatch(deleteData(ids as string[]));
         alert(`Data Deleted`);
         setCheckedList([]);
     };
 
-    const onEdit = (id: React.Key) => {
+    const onEdit = (id: string) => {
         dispatch(editData(id));
     };
     
