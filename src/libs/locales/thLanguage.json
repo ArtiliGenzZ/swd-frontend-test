@@ -1,0 +1,9 @@
+{
+    "EnglishLabel": "อังกฤษ",
+    "ThaiLabel": "ไทย",
+    "HomeTitle": "หน้าแรก",
+    "LayoutHeader": "การจัดการหน้าเว็บ",
+    "ConnectApi": "การเชื่อมต่อ API",
+    "FormHeader": "การจัดการหน้าฟอร์ม",
+    "TestTitle": "แบบทดสอบที่ {{count}}"
+}

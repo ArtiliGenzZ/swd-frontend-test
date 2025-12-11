@@ -1,0 +1,58 @@
+$bg-colorone: #6eda78;
+$bg-colortwo: #ffa200;
+$shape-color : #858585;
+
+@mixin card{
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    background-color: white;
+    height: 150px;
+    &:hover{
+        background-color: $bg-colortwo;
+    }
+}
+
+@mixin triangle{
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-right: 100px solid $shape-color;
+}
+@mixin circle{
+    height: 100px;
+    width: 100px;
+    background-color: $shape-color;
+    border-radius: 50%;
+}
+@mixin oval{
+    height: 100px;
+    width: 80%;
+    background-color: $shape-color;
+    border-radius: 50%;
+}
+@mixin square{
+    height: 100px;
+    width: 100px;
+    background-color: $shape-color;
+}
+@mixin rectangle{
+    height: 100px;
+    width: 200px;
+    background-color: $shape-color;
+}
+@mixin trapezoid{
+	border-bottom: 100px solid $shape-color;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	height: 0;
+	width: 80%;
+}
+@mixin parallelogram{
+	width: 80%;
+	height: 100px;
+	transform: skew(20deg);
+	background: $shape-color;
+}

@@ -1,0 +1,59 @@
+@import '@/styles/variable.scss';
+.layoutandstyle_container{
+    width: 1200px;
+    margin: 2rem auto;
+    border-radius: 0.5rem;
+    .normal_card{
+        @include card;
+        justify-content: center;
+        .triangle{
+            @include triangle;
+        }
+        .right{
+            rotate: 180deg;
+        }
+
+        .trapezoid{
+            @include trapezoid;
+        }
+        .rectangle{
+            @include rectangle;
+        }
+        .parallelogram{
+            @include parallelogram;
+        }
+        .square{
+            @include square;
+        }
+        .circle{
+            @include circle;
+        }
+        .oval{
+            @include oval;
+        }
+    }
+    .big_card{
+        @include card;
+        justify-content: space-around;
+        .triangle{
+            @include triangle;
+        }
+        .up{
+            rotate: 90deg;
+        }
+        .down{
+            rotate: -90deg;
+        }
+    }
+}
+
+.label{
+    position: absolute;
+    border-radius: 1rem;
+    padding: 0.2rem 0.5rem;
+    background-color: $bg-colorone;
+    color: white;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,50%);
+}

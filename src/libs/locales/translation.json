@@ -1,0 +1,16 @@
+{
+    "en": {
+        "translation": {
+            "TestTitle": "Test {{count}}",
+            "LayoutHeader": "Layout & Style",
+            "FormHeader": "Form & Table"
+        }
+    },
+    "th": {
+        "translation": {
+            "TestTitle": "แบบทดสอบที่ {{count}}",
+            "LayoutHeader": "การจัดการหน้าเว็บ",
+            "FormHeader": "การจัดการหน้าฟอร์ม"
+        }
+    }
+}

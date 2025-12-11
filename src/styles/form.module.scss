@@ -1,0 +1,21 @@
+.form_container{
+    position: relative;
+    padding-top: 1.5rem;
+    .home_btn{
+        font-size: 13px;
+        padding: 0.4rem 0.8rem;
+        background-color: #fff;
+        border-radius: 0.25rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-decoration: none;
+    }
+    .form_content{
+        width: 70%;
+        margin: 0 auto;
+        border: 2px solid #000;
+        border-radius: 0.5rem;
+        padding: 1rem;
+    }
+}

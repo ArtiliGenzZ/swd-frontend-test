@@ -1,0 +1,9 @@
+{
+    "EnglishLabel": "EN",
+    "ThaiLabel": "TH",
+    "HomeTitle": "Home",
+    "LayoutHeader": "Layout & Style",
+    "ConnectApi": "Connect API",
+    "FormHeader": "Form & Table",
+    "TestTitle": "Test {{count}}"
+}

@@ -1,0 +1,24 @@
+@import '@/styles/variable.scss';
+
+*{
+	margin: 0;
+	padding: 0;
+  	box-sizing: border-box;
+}
+
+body{
+	background: linear-gradient(to right, $bg-colorone, $bg-colortwo);
+	padding: 0 1rem;
+}
+
+a{
+	text-decoration: none !important;
+	color: inherit !important;
+	&:hover{
+		color: black !important;
+	}
+}
+
+.main_content{
+	margin-top: 0.5rem;
+}
