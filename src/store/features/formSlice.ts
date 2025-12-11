@@ -1,22 +1,22 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface Data {
+export interface DataFormType {
     id: string;
-    title: string;          // e.g., "mr", "mrs", "ms"
+    title: string;         
     firstname: string;
     lastname: string;
-    birthday: string;       // ISO 8601 Format: "2025-12-01T17:00:00.000Z"
-    nationality: number;    // e.g., "th", "usa"
-    citizenId: string;      // 13-digit string
-    gender: number;         // 1: Male, 2: Female, 3: Other
-    countryCode: string;    // Dialing code prefix e.g. "th", "en"
-    mobilePhone: string;    // 10-digit string
+    birthday: string | null;       
+    nationality: number;    
+    citizenId: string;      
+    gender: number;         
+    countryCode: string;    
+    mobilePhone: string;    
     passportNumber: string;
-    expectedSalary: string; // Note: Kept as string to match your JSON input
+    expectedSalary: string; 
 }
 interface FormData {
-    formData: Data | null;
-    storedData: Data[];
+    formData: DataFormType | null;
+    storedData: DataFormType[];
     isEditing: boolean;
 }
 
@@ -29,7 +29,7 @@ const fetchInLocalStorage = () => {
     }
     return [];
 }
-const storeInLocalStorage = (data: Data[]) => {
+const storeInLocalStorage = (data: DataFormType[]) => {
     localStorage.setItem('formData', JSON.stringify(data));
 }
 
@@ -43,7 +43,7 @@ const formSlice = createSlice({
     name: 'form',
     initialState,
     reducers: {
-        addData: (state, action: PayloadAction<Data>) => {
+        addData: (state, action: PayloadAction<DataFormType>) => {
             state.storedData.push(action.payload);
             if (typeof window !== 'undefined') {
                 storeInLocalStorage(state.storedData)
@@ -64,7 +64,7 @@ const formSlice = createSlice({
                 alert(`Data not found`);
             }
         },
-        updateData: (state, action: PayloadAction<Data>) => {
+        updateData: (state, action: PayloadAction<DataFormType>) => {
             state.storedData = state.storedData.map((item) => item.id === action.payload.id ? action.payload : item);
             if (typeof window !== 'undefined') { 
                 storeInLocalStorage(state.storedData)

@@ -8,7 +8,21 @@ import { useAppDispatch, useAppSelector } from '@/store/hook'
 import CitizenIdInput from './CitizenIdInput'
 import { addData, clearForm, updateData } from '@/store/features/formSlice'
 import { v4 as uuidv4 } from 'uuid';
-import dayjs from 'dayjs';
+import dayjs, { Dayjs} from 'dayjs';
+
+interface FormValues {
+    title: string;
+    firstname: string;
+    lastname: string;
+    birthday?: Dayjs;
+    nationality: number;
+    citizenId: string;
+    gender: number;
+    countryCode: string;
+    mobilePhone: string;
+    passportNumber: string;
+    expectedSalary: string;
+}
 
 const Forms = () => {
     const { t , i18n } = useTranslation()
@@ -28,7 +42,7 @@ const Forms = () => {
         }
     }, [formData, form])
 
-    const onSubmit = (values: any) => {
+    const onSubmit = (values: FormValues) => {
         const dataProcess = {
             ...values,
             birthday: values.birthday ? values.birthday.toISOString() : null,
@@ -47,9 +61,7 @@ const Forms = () => {
         }
 
     };
-    const onFinishFailed = (errorInfo: any) => {
-        console.log('Failed:', errorInfo);
-    };
+
     const cleanForm = () => {
         if(formData){
             dispatch(clearForm())
@@ -75,7 +87,7 @@ const Forms = () => {
             <Link href="/" className={styles.home_btn}>{t("HomeTitle")}</Link>
 
             {/* == Main Form == */}
-            <Form form={form} className={styles.form_content} onFinish={onSubmit} onFinishFailed={onFinishFailed}>
+            <Form form={form} className={styles.form_content} onFinish={onSubmit}>
 
                 { /* Firstname and Lastname */}
                 <Row gutter={8}>

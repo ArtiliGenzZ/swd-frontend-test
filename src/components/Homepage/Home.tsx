@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { Flex, Card } from 'antd'
+import { Flex } from 'antd'
 import styles from '@/styles/home.module.scss'
 import Link from 'next/link'
 import { useTranslation } from 'react-i18next'

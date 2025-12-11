@@ -28,15 +28,15 @@ const FormTable = () => {
     const columns: TableColumnsType<DataType> = [
         {
             title: t("Name"),
-            dataIndex: ['firstname', 'lastname'],
-            render: (_, record) => `${record.firstname} ${record.lastname}`,
+            key: 'name',
+            render: (record) => `${record.firstname} ${record.lastname}`,
             sorter: (a, b) => a.firstname.localeCompare(b.firstname)
         },
         {
             title: t("Gender"),
             dataIndex: 'gender',
             sorter: (a, b) => a.gender - b.gender,
-            render: (text, _) => {
+            render: (text) => {
                 return (
                     <span>
                         {text === 1 ? t("Male") : text === 2 ? t("Female") : t("Other")}
@@ -46,15 +46,15 @@ const FormTable = () => {
         },
         {
             title: t("MobilePhone"),
-            dataIndex: 'mobilePhone',
-            render: (_, record) => `${record.countryCode} ${record.mobilePhone}`,
+            key: 'mobilePhone',
+            render: (record) => `${record.countryCode} ${record.mobilePhone}`,
             sorter: (a, b) => a.mobilePhone.localeCompare(b.mobilePhone)
         },
         {
             title: t("Nationality"),
             dataIndex: 'nationality',
             sorter: (a, b) => a.nationality - b.nationality,
-            render: (text, _) => {
+            render: (text) => {
                 return (
                     <span>
                         {text === 1 ? t("ThaiNationality") : text === 2 ? t("AmericanNationality") : text === 3 ? t("FrenchNationality") : t("OtherNationality")}
@@ -65,7 +65,7 @@ const FormTable = () => {
         {
             title: t("Manage"),
             key: 'action',
-            render: (_, record) => (
+            render: (record) => (
                 <Space size="middle">
                     <a onClick={() => onEdit(record.id)}>{t("Edit") }</a>
                     <a onClick={() => onDelete(record.id)}>{t("Delete")}</a>
