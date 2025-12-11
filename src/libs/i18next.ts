@@ -24,7 +24,7 @@ i18next.use(initReactI18next).init({
                 "Firstname": "Firstname",
                 "Lastname": "Lastname",
                 "Birthday": "Birthday",
-                "DateHolder": "mm/dd/yyyy",
+                "DateHolder": "dd/mm/yyyy",
                 "Nationality": "Nationality",
                 "ThaiNationality": "Thai",
                 "AmericanNationality": "American",
