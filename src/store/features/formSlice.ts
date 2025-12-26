@@ -1,18 +1,22 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Dayjs } from "dayjs";
 
-export interface DataFormType {
-    id: string;
-    title: string;         
+export interface FormValues {
+    title: string;
     firstname: string;
     lastname: string;
-    birthday: string        
-    nationality: number;    
-    citizenId: string;      
-    gender: number;         
-    countryCode: string;    
-    mobilePhone: string;    
+    birthday: Dayjs;
+    nationality: number;
+    citizenId: string;
+    gender: number;
+    countryCode: string;
+    mobilePhone: string;
     passportNumber: string;
-    expectedSalary: string; 
+    expectedSalary: string;
+}
+interface DataFormType extends Omit<FormValues, 'birthday'> {
+    id: string;
+    birthday: string;
 }
 interface FormData {
     formData: DataFormType | null;

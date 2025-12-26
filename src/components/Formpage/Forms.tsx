@@ -6,23 +6,10 @@ import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
 import { useAppDispatch, useAppSelector } from '@/store/hook'
 import CitizenIdInput from './CitizenIdInput'
-import { addData, clearForm, updateData } from '@/store/features/formSlice'
+import { addData, clearForm, updateData, FormValues } from '@/store/features/formSlice'
 import { v4 as uuidv4 } from 'uuid';
-import dayjs, { Dayjs} from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
 
-interface FormValues {
-    title: string;
-    firstname: string;
-    lastname: string;
-    birthday: Dayjs;
-    nationality: number;
-    citizenId: string;
-    gender: number;
-    countryCode: string;
-    mobilePhone: string;
-    passportNumber: string;
-    expectedSalary: string;
-}
 
 const Forms = () => {
     const { t , i18n } = useTranslation()
