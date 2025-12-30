@@ -72,7 +72,7 @@ const Forms = () => {
 
             {/* == Home Button Link */}
             <Link href="/" className={styles.home_btn}>{t("HomeTitle")}</Link>
-            {/* == Github Rollback Testing One */}
+
             {/* == Main Form == */}
             <Form form={form} className={styles.form_content} onFinish={onSubmit}>
 
@@ -118,7 +118,7 @@ const Forms = () => {
                         </Form.Item>
                     </Col>
                 </Row>
-                {/* == Github Rollback Testing One */}                  
+
                 {/* Birthday and Nationality */}
                 <Row gutter={8}>
                     {/* Birthday */}
