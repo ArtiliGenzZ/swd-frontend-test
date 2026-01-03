@@ -43,7 +43,7 @@ i18next.use(initReactI18next).init({
                 "Delete": "DELETE",
                 "Edit": "EDIT",
                 "SelectAll": "Select All",
-                "Prev" : "PREV",
+                "Prev": "PREV",
                 "Next": "NEXT",
                 "Manage": "Manage",
 

@@ -8,11 +8,11 @@ import { useAppDispatch, useAppSelector } from '@/store/hook'
 import CitizenIdInput from './CitizenIdInput'
 import { addData, clearForm, updateData, FormValues } from '@/store/features/formSlice'
 import { v4 as uuidv4 } from 'uuid';
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs from 'dayjs';
 
 
 const Forms = () => {
-    const { t , i18n } = useTranslation()
+    const { t, i18n } = useTranslation()
     const dispatch = useAppDispatch();
     const [form] = Form.useForm();
     const formData = useAppSelector((state) => state.form.formData);
@@ -32,7 +32,7 @@ const Forms = () => {
     const onSubmit = (values: FormValues) => {
         const dataProcess = {
             ...values,
-            birthday: values.birthday.toISOString() ,
+            birthday: values.birthday.toISOString(),
         }
         if (formData) {
             const dataOnEdit = { id: formData.id, ...dataProcess }
@@ -50,7 +50,7 @@ const Forms = () => {
     };
 
     const cleanForm = () => {
-        if(formData){
+        if (formData) {
             dispatch(clearForm())
         }
         form.resetFields();
@@ -61,7 +61,7 @@ const Forms = () => {
         const fieldsWithErrors = form.getFieldsError()
             .filter(({ errors }) => errors.length > 0)
             .map(({ name }) => name);
-        
+
         if (fieldsWithErrors.length > 0) {
             form.validateFields(fieldsWithErrors);
         }
@@ -118,7 +118,7 @@ const Forms = () => {
                         </Form.Item>
                     </Col>
                 </Row>
-                {/* == Github Rollback Testing One */}                  
+                {/* == Github Rollback Testing One */}
                 {/* Birthday and Nationality */}
                 <Row gutter={8}>
                     {/* Birthday */}
@@ -156,9 +156,9 @@ const Forms = () => {
                         <Form.Item
                             label={t("CitizenId")}
                             name="citizenId"
-                            rules={[{len:13 , message: t("CitizenLenErr") }]}
+                            rules={[{ len: 13, message: t("CitizenLenErr") }]}
                         >
-                            <CitizenIdInput/>
+                            <CitizenIdInput />
                         </Form.Item>
                     </Col>
                 </Row>
@@ -200,7 +200,7 @@ const Forms = () => {
                                         { value: '+1', label: '🇺🇸 +1' },
                                         { value: '+33', label: '🇫🇷 +33' },
                                     ]}
-                                    
+
                                 />
                             </Form.Item>
                             <span>-</span>
@@ -246,7 +246,7 @@ const Forms = () => {
                             }}
                             rules={[{ required: true, message: t("ExpectedSalaryErr") }]}
                         >
-                            <Input/>
+                            <Input />
                         </Form.Item>
                     </Col>
                     {/* Action Buttons */}
