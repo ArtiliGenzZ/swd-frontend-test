@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={`${geistSans.className}`}>
+      <body className={`${geistSans.className}`}> 
         <AntdRegistry>
           <StoreProvider>
             <I18nProvider>

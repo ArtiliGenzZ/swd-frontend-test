@@ -96,10 +96,10 @@ const Forms = () => {
                         </Form.Item>
                     </Col>
                     { /* Firstname */}
-                    { /* Github Rollback Testing One */}
-                    { /* Github Rollback Testing Two */}
-                    { /* Github Rollback Testing Three */}
-                    { /* Github Rollback Testing Four */}
+                    
+                    
+                    
+                    
                     { /* Github Rollback Testing Six */}
                     <Col span={9}>
                         <Form.Item
@@ -124,7 +124,6 @@ const Forms = () => {
                         </Form.Item>
                     </Col>
                 </Row>
-                {/* == Github Rollback Testing One */}
                 {/* Birthday and Nationality */}
                 <Row gutter={8}>
                     {/* Birthday */}
