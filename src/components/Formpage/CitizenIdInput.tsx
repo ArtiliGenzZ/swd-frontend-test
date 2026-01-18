@@ -6,7 +6,7 @@ interface CitizenIdInputProps {
     onChange?: (value: string) => void;
 }
 
-
+//Github Rollback Testing Seven
 const CitizenIdInput: React.FC<CitizenIdInputProps> = ({ value = '', onChange }) => {
     const inputRefs = useRef<(InputRef | null)[]>([]);
     const segmentConfig = [
